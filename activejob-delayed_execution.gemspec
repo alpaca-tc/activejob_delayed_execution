@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['alpaca-tc']
   spec.email         = ['alpaca-tc@alpaca.tc']
 
-  spec.summary       = %q{run method by a variety of queueing activejob.}
+  spec.summary       = %q{activejob-delayed_execution provides very simple delayed behavior for Ruby.}
   spec.homepage      = 'https://github.com/alpaca-tc/activejob-delayed_execution'
   spec.license       = 'MIT'
 
