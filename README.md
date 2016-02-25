@@ -21,7 +21,7 @@ Or install it yourself as:
 ## Usage
 
 ```
-class ActiveRecord < ActiveRecord::Base
+class User < ActiveRecord::Base
   def very_slow_method; end
   def very_slow_method_with_arguments(a, b, c); end
 end
