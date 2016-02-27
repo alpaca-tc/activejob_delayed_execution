@@ -7,6 +7,7 @@
 Add this line to your application's Gemfile:
 
 ```ruby
+gem 'activejob'
 gem 'activejob-delayed_execution'
 ```
 
@@ -21,6 +22,10 @@ Or install it yourself as:
 ## Usage
 
 ```
+# config/initializers/activejob_delayed_execution.rb
+# Define .delayed method
+ActiveRecord::Base.include(ActiveJob::DelayedExecution)
+
 class User < ActiveRecord::Base
   def very_slow_method; end
   def very_slow_method_with_arguments(a, b, c); end
