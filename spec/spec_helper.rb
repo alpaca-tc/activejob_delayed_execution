@@ -1,13 +1,10 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
-require 'active_job'
 require 'activejob_delayed_execution'
 
-ActiveJob::Base.queue_adapter = :test
-GlobalID.app = 'delayedexecution'
+Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 
 RSpec.configure do |config|
-  config.include ActiveJob::TestHelper
   config.raise_errors_for_deprecations!
   config.order = :random
   config.profile_examples = 10
