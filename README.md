@@ -1,6 +1,6 @@
-# activejob-delayed_execution
+# active_job_delayed_execution
 
-`activejob-delayed_execution` provides very simple delayed behavior for Ruby.
+`active_job_delayed_execution` provides very simple delayed behavior for Ruby.
 
 ## Installation
 
@@ -8,7 +8,7 @@ Add this line to your application's Gemfile:
 
 ```ruby
 gem 'activejob'
-gem 'activejob-delayed_execution'
+gem 'active_job_delayed_execution'
 ```
 
 And then execute:
@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install activejob-delayed_execution
+    $ gem install active_job_delayed_execution
 
 ## Usage
 
@@ -38,7 +38,7 @@ User.first.delayed.very_slow_method_with_arguments('1', '2', '3') #=> Enqueues d
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at [https://github.com/alpaca-tc/activejob-delayed_execution](https://github.com/alpaca-tc/activejob-delayed_execution). 
+Bug reports and pull requests are welcome on GitHub at [https://github.com/alpaca-tc/active_job_delayed_execution](https://github.com/alpaca-tc/active_job_delayed_execution). 
 
 ## License
 

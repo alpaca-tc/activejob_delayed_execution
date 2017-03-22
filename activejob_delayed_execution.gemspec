@@ -4,13 +4,13 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'active_job_delayed_execution/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'activejob-delayed_execution'
+  spec.name          = 'activejob_delayed_execution'
   spec.version       = ActiveJobDelayedExecution::VERSION
   spec.authors       = ['alpaca-tc']
   spec.email         = ['alpaca-tc@alpaca.tc']
 
-  spec.summary       = %q{activejob-delayed_execution provides very simple delayed behavior for Ruby.}
-  spec.homepage      = 'https://github.com/alpaca-tc/activejob-delayed_execution'
+  spec.summary       = %q{active_job_delayed_execution provides very simple delayed behavior for Ruby.}
+  spec.homepage      = 'https://github.com/alpaca-tc/active_job_delayed_execution'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(spec)/}) }
