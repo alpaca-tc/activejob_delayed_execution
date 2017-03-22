@@ -24,7 +24,8 @@ Or install it yourself as:
 ```
 # config/initializers/activejob_delayed_execution.rb
 # Define .delayed method
-ActiveRecord::Base.include(ActiveJob::DelayedExecution)
+ActiveRecord::Base.include(ActiveJobDelayedExecution::Delayable)
+# ActiveJobDelayedExecution.parent_class_name = 'ApplicationJob'
 
 class User < ActiveRecord::Base
   def very_slow_method; end
