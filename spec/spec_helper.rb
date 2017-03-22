@@ -1,6 +1,6 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
-require 'activejob_delayed_execution'
+require 'active_job_delayed_execution'
 
 Dir[File.expand_path('../support/**/*.rb', __FILE__)].each { |f| require f }
 
