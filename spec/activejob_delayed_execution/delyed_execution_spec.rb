@@ -1,16 +1,16 @@
 require 'spec_helper'
 
-describe ActiveJob::DelayedExecution do
+describe ActiveJobDelayedExecution do
   describe 'VERSION' do
     it 'has a version number' do
-      expect(ActiveJob::DelayedExecution::VERSION).not_to be nil
+      expect(ActiveJobDelayedExecution::VERSION).not_to be nil
     end
   end
 
   describe '.delayed' do
     let(:klass) do
       Class.new do
-        include ActiveJob::DelayedExecution
+        include ActiveJobDelayedExecution
         include GlobalID::Identification
 
         def self.name; 'ClassName' end
@@ -21,7 +21,7 @@ describe ActiveJob::DelayedExecution do
     it 'enqueues DelayedExecutionJob' do
       expect { klass.new.delayed.methods }.to change {
         enqueued_jobs.map { |v| v[:job] }
-      }.from([]).to([ActiveJob::DelayedExecution::DelayedExecutionJob])
+      }.from([]).to([ActiveJobDelayedExecution::DelayedExecutionJob])
     end
   end
 end

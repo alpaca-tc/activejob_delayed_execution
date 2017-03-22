@@ -1,7 +1,7 @@
 $LOAD_PATH.unshift File.expand_path('../../lib', __FILE__)
 
 require 'active_job'
-require 'activejob/delayed_execution'
+require 'activejob_delayed_execution'
 
 ActiveJob::Base.queue_adapter = :test
 GlobalID.app = 'delayedexecution'

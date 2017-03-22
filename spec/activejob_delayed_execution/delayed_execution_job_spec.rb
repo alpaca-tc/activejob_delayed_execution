@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-RSpec.describe ActiveJob::DelayedExecution::DelayedExecutionJob do
+RSpec.describe ActiveJobDelayedExecution::DelayedExecutionJob do
   subject { described_class.perform_now(object, public_method_name, *arguments) }
 
   let(:object) { Object.new }
