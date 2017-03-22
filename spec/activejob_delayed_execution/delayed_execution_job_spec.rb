@@ -1,5 +1,3 @@
-require 'spec_helper'
-
 RSpec.describe ActiveJobDelayedExecution::DelayedExecutionJob do
   subject { described_class.perform_now(object, public_method_name, *arguments) }
 

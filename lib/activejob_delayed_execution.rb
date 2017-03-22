@@ -3,6 +3,7 @@ require 'activejob_delayed_execution/version'
 
 module ActiveJobDelayedExecution
   autoload :DelayedExecutionJob, 'activejob_delayed_execution/delayed_execution_job'
+  autoload :Delayable, 'activejob_delayed_execution/delayable'
   autoload :Proxy, 'activejob_delayed_execution/proxy'
 
   mattr_accessor :parent_class_name
@@ -10,9 +11,5 @@ module ActiveJobDelayedExecution
 
   def self.parent_class
     parent_class_name.constantize
-  end
-
-  def delayed
-    Proxy.new(self)
   end
 end
