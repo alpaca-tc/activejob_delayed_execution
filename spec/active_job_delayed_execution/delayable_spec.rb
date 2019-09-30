@@ -1,7 +1,5 @@
 describe ActiveJobDelayedExecution::Delayable do
   describe '#delayed' do
-    subject { string.delayed }
-
     let(:string) do
       'hello'.tap do |string|
         string.extend(described_class)
@@ -17,6 +15,24 @@ describe ActiveJobDelayedExecution::Delayable do
       end
     end
 
-    it { expect(get_class(subject)).to be(ActiveJobDelayedExecution::Proxy) }
+    context 'without arguments' do
+      it { expect(get_class(string.delayed)).to be(ActiveJobDelayedExecution::Proxy) }
+
+      it 'enqueues DelayedExecutionJob without options' do
+        string.delayed.do_something
+
+        expect(enqueued_jobs.map { |v| v[:job] }).to eq([ActiveJobDelayedExecution::DelayedExecutionJob])
+        expect(enqueued_jobs.map { |v| v[:queue] }).to eq(['default'])
+      end
+    end
+
+    context 'with arguments' do
+      it 'enqueues DelayedExecutionJob with options' do
+        string.delayed(queue: 'low').do_something
+
+        expect(enqueued_jobs.map { |v| v[:job] }).to eq([ActiveJobDelayedExecution::DelayedExecutionJob])
+        expect(enqueued_jobs.map { |v| v[:queue] }).to eq(['low'])
+      end
+    end
   end
 end

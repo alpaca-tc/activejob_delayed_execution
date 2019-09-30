@@ -1,7 +1,7 @@
 module ActiveJobDelayedExecution
   module Delayable
-    def delayed
-      ActiveJobDelayedExecution::Proxy.new(self)
+    def delayed(options = {})
+      ActiveJobDelayedExecution::Proxy.new(self, options)
     end
   end
 end
